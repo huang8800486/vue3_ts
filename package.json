@@ -25,6 +25,7 @@
 		"husky": "^7.0.4",
 		"lint-staged": "^12.3.3",
 		"mrm": "^3.0.10",
+		"pinia": "^2.0.11",
 		"prettier": "^2.5.1",
 		"stylus": "^0.56.0",
 		"stylus-loader": "^6.2.0",
