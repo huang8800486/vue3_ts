@@ -13,13 +13,25 @@ export default defineConfig({
 	},
 	css: {
 		preprocessorOptions: {
-			// styl: {
-			// 	// additionalData: '@import "./src/assets/styles/variables.styl";',
-			// 	// imports: [path.resolve(__dirname, 'src/assets/styles/variables.styl;')],
-
-			// },
 			stylus: {
 				imports: [path.resolve(__dirname, 'src/assets/styles/variables.styl')],
+			},
+		},
+	},
+	server: {
+		host: '0.0.0.0',
+		port: 3000,
+		open: true,
+		https: false,
+		proxy: {},
+	},
+	build: {
+		terserOptions: {
+			compress: {
+				// eslint-disable-next-line camelcase
+				drop_console: true,
+				// eslint-disable-next-line camelcase
+				drop_debugger: true,
 			},
 		},
 	},

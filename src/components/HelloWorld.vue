@@ -3,13 +3,15 @@
 	<div>用户名:{{ mainStore.name }}<br />长度:{{ mainStore.nameLength }} 测试:{{ mainStore.test }}</div>
 	<hr />
 	<button @click="updateName">修改store中的name</button>
+	<h3>Mouse: {{ x }} x {{ y }}</h3>
 	<img alt="Vue logo" src="@/assets/logo.png" />
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
 defineProps<{ msg: string }>();
 import { useMainStore } from '@/store/main';
-
+import { useMouse } from '@vueuse/core';
+const { x, y } = useMouse();
 const count = ref(0);
 const mainStore = useMainStore();
 const updateName = () => {
