@@ -3,12 +3,13 @@ import { ref, onMounted } from 'vue';
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import HelloWorld from './components/HelloWorld.vue';
-const callback = (value) => {
+const callback = (value: number) => {
 	console.log('fewfew', value);
 };
 const hello = ref(null);
 onMounted(() => {
 	console.log('父级获取子级', hello.value.count);
+	console.log(import.meta.env.MODE);
 });
 </script>
 <template>
