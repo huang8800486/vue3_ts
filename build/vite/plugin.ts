@@ -3,6 +3,7 @@ import vueSetupExtend from 'vite-plugin-vue-setup-extend';
 import legacy from '@vitejs/plugin-legacy';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
+import { configSvgIconsPlugin } from './svgSprite';
 export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
 	const { VITE_PUBLIC_PATH, VITE_PROXY, VITE_APP_TITLE } = viteEnv;
 
@@ -12,6 +13,9 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
 		// support name
 		vueSetupExtend(),
 	];
+	// @vitejs/plugin-legacy 兼容
+	isBuild && vitePlugins.push(legacy());
+
 	// vue API 自动导入
 	vitePlugins.push(
 		AutoImport({
@@ -35,8 +39,8 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
 			directoryAsNamespace: false,
 		})
 	);
-	// @vitejs/plugin-legacy 兼容
-	isBuild && vitePlugins.push(legacy());
+	// vite-plugin-svg-icons
+	vitePlugins.push(configSvgIconsPlugin(isBuild));
 
 	return vitePlugins;
 }

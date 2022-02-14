@@ -10,8 +10,9 @@
 	<!-- <div class="title2">国际化: {{ i18nText.common.comfirm }}</div> -->
 	<button @click="switchLang">切换国际化</button>
 	<button @click="callback">子组件向父组件事件传递</button>
-	<img src="@/assets/logo.png" />
 	<hr />
+	<BaseSvg name="compute" color="blue" size="38"></BaseSvg>
+	<BaseSvg name="discord" color="#000" size="38"></BaseSvg>
 </template>
 <script setup lang="ts">
 import dayjs from 'dayjs';
