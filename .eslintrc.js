@@ -13,6 +13,7 @@ module.exports = {
 		'plugin:prettier/recommended',
 		// eslint-config-prettier 的缩写
 		'prettier',
+		'vue-global-api',
 	],
 	parserOptions: {
 		ecmaVersion: 12,
