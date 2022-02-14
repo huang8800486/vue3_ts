@@ -1,6 +1,7 @@
 import vue from '@vitejs/plugin-vue';
-import vueSetupExtend from 'vite-plugin-vue-setup-extend';
 import legacy from '@vitejs/plugin-legacy';
+import vueJsx from '@vitejs/plugin-vue-jsx';
+import vueSetupExtend from 'vite-plugin-vue-setup-extend';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { configSvgIconsPlugin } from './svgSprite';
@@ -10,6 +11,7 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
 	const vitePlugins = [
 		// have to
 		vue(),
+		vueJsx(),
 		// support name
 		vueSetupExtend(),
 	];
