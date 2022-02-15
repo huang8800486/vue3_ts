@@ -26,6 +26,7 @@ module.exports = {
 	// eslint-plugin-vue @typescript-eslint/eslint-plugin eslint-plugin-prettier的缩写
 	plugins: ['vue', '@typescript-eslint', 'prettier'],
 	rules: {
+		'vue/script-setup-uses-vars': 'error',
 		'@typescript-eslint/ban-ts-ignore': 'off',
 		'@typescript-eslint/no-unused-vars': 'off',
 		'@typescript-eslint/explicit-function-return-type': 'off',
@@ -37,12 +38,30 @@ module.exports = {
 		'@typescript-eslint/ban-types': 'off',
 		'@typescript-eslint/no-non-null-assertion': 'off',
 		'@typescript-eslint/explicit-module-boundary-types': 'off',
+		'vue/attributes-order': 'off',
+		'vue/one-component-per-file': 'off',
+		'vue/html-closing-bracket-newline': 'off',
+		'vue/max-attributes-per-line': 'off',
+		'vue/multiline-html-element-content-newline': 'off',
+		'vue/singleline-html-element-content-newline': 'off',
+		'vue/attribute-hyphenation': 'off',
+		'vue/require-default-prop': 'off',
+		'vue/require-explicit-emits': 'off',
+		'vue/html-self-closing': [
+			'error',
+			{
+				html: {
+					void: 'always',
+					normal: 'never',
+					component: 'always',
+				},
+				svg: 'always',
+				math: 'always',
+			},
+		],
+		'vue/multi-word-component-names': 'off',
 		'no-var': 'error',
 		'prettier/prettier': 'error',
-		// 禁止出现console
-		'no-console': 'warn',
-		// 禁用debugger
-		'no-debugger': 'warn',
 		// 禁止出现重复的 case 标签
 		'no-duplicate-case': 'warn',
 		// 禁止出现空语句块

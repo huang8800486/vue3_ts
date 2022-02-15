@@ -2,7 +2,7 @@
 	<div>
 		首页
 		<HelloWorld ref="hello" msg="Hello Vue 3 + TypeScript + Vite" @callback="callback" />
-		<BaseButton></BaseButton>
+		<BaseButton />
 	</div>
 </template>
 <script setup lang="ts">

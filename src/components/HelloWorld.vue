@@ -11,8 +11,8 @@
 	<button @click="switchLang">切换国际化</button>
 	<button @click="callback">子组件向父组件事件传递</button>
 	<hr />
-	<BaseSvg name="compute" color="blue" size="38"></BaseSvg>
-	<BaseSvg name="discord" color="#000" size="38"></BaseSvg>
+	<BaseSvg name="compute" color="blue" size="38" />
+	<BaseSvg name="discord" color="#000" size="38" />
 </template>
 <script setup lang="ts">
 import dayjs from 'dayjs';
