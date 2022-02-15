@@ -16,6 +16,14 @@
 		},
 		"allowSyntheticDefaultImports": true
 	},
-	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "types/styles.d.ts", "types/images.d.ts"],
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.d.ts",
+		"src/**/*.tsx",
+		"src/**/*.vue",
+		"types/styles.d.ts",
+		"types/images.d.ts",
+		"types/env.d.ts"
+	],
 	"references": [{ "path": "./tsconfig.node.json" }]
 }

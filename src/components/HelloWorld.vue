@@ -13,6 +13,7 @@
 	<hr />
 	<BaseSvg name="compute" color="blue" size="38" />
 	<BaseSvg name="discord" color="#000" size="38" />
+	<img src="@/assets/images/logo.png" />
 </template>
 <script setup lang="ts">
 import dayjs from 'dayjs';

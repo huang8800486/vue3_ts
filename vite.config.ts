@@ -6,6 +6,10 @@ import { resolve } from 'path';
 import { wrapperEnv } from './build/utils';
 import { createProxy } from './build/proxy';
 import { createVitePlugins } from './build/vite/plugin';
+
+function pathResolve(dir: string) {
+	return resolve(process.cwd(), '.', dir);
+}
 const configArgv: any = process.env.npm_config_argv;
 const command = JSON.parse(configArgv).cooked[1];
 const { dependencies, devDependencies, name, version } = pkg;
@@ -30,9 +34,18 @@ export default defineConfig({
 	plugins: createVitePlugins(viteEnv, isBuild),
 
 	resolve: {
-		alias: {
-			'@': resolve(__dirname, 'src'),
-		},
+		alias: [
+			// /@/xxxx => src/xxxx
+			{
+				find: /@\//,
+				replacement: pathResolve('src') + '/',
+			},
+			// /#/xxxx => types/xxxx
+			{
+				find: /#\//,
+				replacement: pathResolve('types') + '/',
+			},
+		],
 	},
 	css: {
 		preprocessorOptions: {
