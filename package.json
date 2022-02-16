@@ -4,8 +4,8 @@
 	"version": "0.0.0",
 	"scripts": {
 		"dev": "vite",
-		"build": "vue-tsc --noEmit && vite build --mode production",
-		"alpha": "vue-tsc --noEmit && vite build --mode alpha",
+		"build": "vite build --mode production",
+		"alpha": "vite build --mode alpha",
 		"preview": "vite preview",
 		"lint": "eslint src --fix --ext .ts,.tsx,.vue,.js,.jsx",
 		"prettier": "prettier --write .",
@@ -35,6 +35,7 @@
 		"mrm": "^3.0.10",
 		"pinia": "^2.0.11",
 		"prettier": "^2.5.1",
+		"resize-observer-polyfill": "^1.5.1",
 		"stylus": "^0.56.0",
 		"stylus-loader": "^6.2.0",
 		"typescript": "^4.5.4",

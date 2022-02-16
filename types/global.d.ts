@@ -7,3 +7,6 @@ declare interface ViteEnv {
 	VITE_PUBLIC_PATH: string;
 	VITE_USER_NODE_ENV: string;
 }
+
+declare type Nullable<T> = T | null;
+declare type ElRef<T extends HTMLElement = HTMLDivElement> = Nullable<T>;

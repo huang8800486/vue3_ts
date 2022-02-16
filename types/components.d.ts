@@ -4,9 +4,10 @@
 
 declare module 'vue' {
 	export interface GlobalComponents {
-		BaseButton: typeof import('./../src/components/common/BaseButton.vue')['default'];
-		BaseSvg: typeof import('./../src/components/common/BaseSvg.vue')['default'];
+		BaseButton: typeof import('./../src/components/Common/BaseButton.vue')['default'];
+		BaseSvg: typeof import('./../src/components/Common/BaseSvg.vue')['default'];
 		HelloWorld: typeof import('./../src/components/HelloWorld.vue')['default'];
+		Scrollbar: typeof import('./../src/components/Base/Scrollbar/src/Scrollbar.vue')['default'];
 	}
 }
 

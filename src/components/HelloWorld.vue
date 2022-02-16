@@ -17,7 +17,7 @@
 </template>
 <script setup lang="ts">
 import dayjs from 'dayjs';
-import { useMainStore } from '@/store/main';
+import { useMainStore } from '@/store/modules/main';
 import { useMouse } from '@vueuse/core'; // vueuse插件
 import { useI18n } from 'vue-i18n'; // 国际化
 import { switchLanguage } from '@/locals/index'; // 国际化语言

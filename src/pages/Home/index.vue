@@ -1,8 +1,12 @@
 <template>
-	<div>
+	<div style="height: 1100px">
 		首页
 		<HelloWorld ref="hello" msg="Hello Vue 3 + TypeScript + Vite" @callback="callback" />
 		<BaseButton />
+		<router-link to="/index2">跳转2</router-link>
+		<div style="height: 100px; width: 100%; background: #ababab">
+			<Scrollbar> 1212 </Scrollbar>
+		</div>
 	</div>
 </template>
 <script setup lang="ts">

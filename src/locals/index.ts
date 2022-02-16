@@ -1,3 +1,4 @@
+import type { App } from 'vue';
 import { createI18n } from 'vue-i18n';
 import zh_CN from './zh_CN';
 import en_US from './en_US';
@@ -7,7 +8,7 @@ import en_US from './en_US';
  * @description: Helper to load the locale json files with each locale data
  */
 const lang: string = localStorage.getItem('lan') || 'en_US';
-export const i18nLang = createI18n({
+const i18nLang = createI18n({
 	locale: lang,
 	fallbackLocale: lang,
 	messages: {
@@ -15,7 +16,13 @@ export const i18nLang = createI18n({
 		en_US,
 	},
 });
-
+/**
+ * 初始化国际化
+ * @param app => vue对象
+ */
+export function setupI18n(app: App<Element>) {
+	app.use(i18nLang);
+}
 /**
  * switchLanguage 切换语言
  * @param {Object} i18n => i18n对象

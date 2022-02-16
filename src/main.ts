@@ -1,12 +1,27 @@
-import { createApp } from 'vue';
-import App from './App.vue';
-import { createPinia } from 'pinia'; // 状态管理
-import router from './router';
-import { i18nLang } from '@/locals/index'; // 国际化语言
-import '@/assets/styles/index.styl';
 import 'virtual:svg-icons-register';
-const app = createApp(App);
-app.use(router);
-app.use(i18nLang);
-app.use(createPinia());
-app.mount('#app');
+import App from './App.vue';
+import { createApp } from 'vue';
+import { setupStore } from '@/store';
+import { setupI18n } from '@/locals';
+import { setupRouter } from '@/router';
+import { setupGlobDirectives } from '@/directives';
+import '@/assets/styles/index.styl';
+
+async function bootstrap() {
+	const app = createApp(App);
+	// 注册路由
+	setupRouter(app);
+
+	// 注册国际化语言
+	setupI18n(app);
+
+	// 注册状态管理pinia
+	setupStore(app);
+
+	// 注册全局自定义指令
+	setupGlobDirectives(app);
+
+	app.mount('#app');
+}
+
+bootstrap();
