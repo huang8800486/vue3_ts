@@ -8,6 +8,7 @@ declare module 'vue' {
 		BaseSvg: typeof import('./../src/components/Common/BaseSvg.vue')['default'];
 		HelloWorld: typeof import('./../src/components/HelloWorld.vue')['default'];
 		Scrollbar: typeof import('./../src/components/Base/Scrollbar/src/Scrollbar.vue')['default'];
+		ScrollContainer: typeof import('./../src/components/Base/ScrollContainer/ScrollContainer.vue')['default'];
 	}
 }
 

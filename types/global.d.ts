@@ -1,4 +1,5 @@
 declare type Recordable<T = any> = Record<string, T>;
+declare type RefType<T> = T | null;
 declare interface ViteEnv {
 	VITE_PORT: number;
 	VITE_USE_PWA: boolean;

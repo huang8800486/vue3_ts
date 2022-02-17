@@ -97,6 +97,9 @@ onBeforeUnmount(() => {
 		removeEventListener('resize', update);
 	}
 });
+defineExpose({
+	wrap,
+});
 </script>
 <style lang="stylus">
 .scrollbar {
