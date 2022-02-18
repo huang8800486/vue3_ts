@@ -8,7 +8,7 @@ import en_US from './en_US';
  * @description: Helper to load the locale json files with each locale data
  */
 const lang: string = localStorage.getItem('lan') || 'en_US';
-const i18nLang = createI18n({
+export const i18nLang = createI18n({
 	locale: lang,
 	fallbackLocale: lang,
 	messages: {

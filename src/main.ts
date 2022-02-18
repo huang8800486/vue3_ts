@@ -1,6 +1,5 @@
 import 'virtual:svg-icons-register';
-import App from './App.vue';
-import { createApp } from 'vue';
+import { app } from './mount';
 import { setupStore } from '@/store';
 import { setupI18n } from '@/locals';
 import { setupRouter } from '@/router';
@@ -8,7 +7,6 @@ import { setupGlobDirectives } from '@/directives';
 import '@/assets/styles/index.styl';
 
 async function bootstrap() {
-	const app = createApp(App);
 	// 注册路由
 	setupRouter(app);
 

@@ -1,6 +1,6 @@
 <template>
 	<div style="height: 1100px">
-		首页
+		<div class="toast_component">首页</div>
 		<HelloWorld ref="hello" msg="Hello Vue 3 + TypeScript + Vite" @callback="callback" />
 		<BaseButton />
 		<router-link to="/index2">跳转2</router-link>
@@ -19,6 +19,7 @@
 </template>
 <script setup lang="ts">
 import { ScrollActionType } from '@/components/Base/ScrollContainer/typing.ts';
+import Toast from '@/components/Base/Toast';
 type Nullable<T> = T | null;
 const scrollRef = ref<Nullable<ScrollActionType>>(null);
 const getScroll = () => {
@@ -31,6 +32,9 @@ const getScroll = () => {
 
 const scrollTo = (top: number) => {
 	getScroll().scrollTo(top);
+	Toast({
+		text: '测试', // 文本
+	});
 };
 const scrollBottom = (top: number) => {
 	getScroll().scrollBottom(top);

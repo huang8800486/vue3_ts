@@ -9,6 +9,7 @@ declare module 'vue' {
 		HelloWorld: typeof import('./../src/components/HelloWorld.vue')['default'];
 		Scrollbar: typeof import('./../src/components/Base/Scrollbar/src/Scrollbar.vue')['default'];
 		ScrollContainer: typeof import('./../src/components/Base/ScrollContainer/ScrollContainer.vue')['default'];
+		Toast: typeof import('./../src/components/Base/Toast/src/Toast.vue')['default'];
 	}
 }
 
