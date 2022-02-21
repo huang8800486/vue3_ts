@@ -1,0 +1,56 @@
+// 共公
+#global_dialog {
+  position: fixed;
+  z-index: 10000;
+  right: 0;
+  top: 0;
+}
+
+.dialog_component {
+  position: relative;
+  width: 100%;
+
+  &.show {
+    .content_main {
+      opacity: 1;
+    }
+  }
+
+  .content_mark {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .content_main {
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .content_wrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+    .vertical_content {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

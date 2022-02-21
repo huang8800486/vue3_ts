@@ -20,6 +20,7 @@
 <script setup lang="ts">
 import { ScrollActionType } from '@/components/Base/ScrollContainer/typing.ts';
 import Toast from '@/components/Base/Toast';
+import createDialog from '@/components/Base/createDialog';
 type Nullable<T> = T | null;
 const scrollRef = ref<Nullable<ScrollActionType>>(null);
 const getScroll = () => {
@@ -34,6 +35,18 @@ const scrollTo = (top: number) => {
 	getScroll().scrollTo(top);
 	Toast({
 		text: '测试', // 文本
+	});
+	createDialog({
+		typeLayer: 'custom',
+		bindAttrs: {
+			name: '测试',
+			cancel: () => {
+				console.log('取消回调');
+			},
+			success: (): void => {
+				console.log('成功回调');
+			},
+		},
 	});
 };
 const scrollBottom = (top: number) => {

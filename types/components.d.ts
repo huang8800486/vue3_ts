@@ -6,7 +6,10 @@ declare module 'vue' {
 	export interface GlobalComponents {
 		BaseButton: typeof import('./../src/components/Common/BaseButton.vue')['default'];
 		BaseSvg: typeof import('./../src/components/Common/BaseSvg.vue')['default'];
+		CustomLayers: typeof import('./../src/components/Base/CreateDialog/src/CustomLayers.vue')['default'];
+		Dialog: typeof import('./../src/components/Base/CreateDialog/src/dialog.vue')['default'];
 		HelloWorld: typeof import('./../src/components/HelloWorld.vue')['default'];
+		NormalLayers: typeof import('./../src/components/Base/CreateDialog/src/NormalLayers.vue')['default'];
 		Scrollbar: typeof import('./../src/components/Base/Scrollbar/src/Scrollbar.vue')['default'];
 		ScrollContainer: typeof import('./../src/components/Base/ScrollContainer/ScrollContainer.vue')['default'];
 		Toast: typeof import('./../src/components/Base/Toast/src/Toast.vue')['default'];

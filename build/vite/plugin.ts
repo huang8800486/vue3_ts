@@ -23,6 +23,11 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
 		AutoImport({
 			dts: 'types/auto-imports.d.ts', // 可以自定义文件生成的位置，默认是根目录下
 			imports: ['vue'],
+			include: [
+				/\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+				/\.vue$/,
+				/\.vue\?vue/, // .vue
+			],
 		})
 	);
 	// 自动注册组件

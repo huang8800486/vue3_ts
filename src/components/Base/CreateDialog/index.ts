@@ -1,29 +1,25 @@
 import { app } from '@/mount'; // 全局createApp的实例
 import { createVNode, VNode, render } from 'vue';
-import MessageConstructor from './src/Toast.vue'; // 组件
-import { IglobalConfig, merge, appendToElement } from './src/types';
-
+import dialog from './src/dialog.vue';
+import { appendToElement, IglobalConfig, merge } from './src/types';
+import './src/index.styl';
 let vm: VNode;
 // 全局默认属性
 const globalConfig: IglobalConfig = {
-	type: 'success', // 类型, success || error
-	time: 2000, // 持续时长
+	type: 'normal', // 类型, normal || custom
 	show: false, // 控制显示
-	text: '', // 文本
 };
-// 创建全局Toast方法
-const toastPlugin = (options: IglobalConfig): void => {
+const createDialog = (options: any): void => {
 	// 参数merge
 	const config = merge(options, globalConfig);
-	// 组件生成dom
+
 	const container = document.createElement('div');
-	vm = createVNode(MessageConstructor, config, { default: (): IglobalConfig => config });
+	vm = createVNode(dialog, config, { default: (): any => config });
 	// 生成的虚拟dom共享根app的上下文
 	vm.appContext = app._context;
-	// 渲染到dom
 	render(vm, container);
 	// 添到dom
 	appendToElement(container);
 };
 
-export default toastPlugin;
+export default createDialog;
